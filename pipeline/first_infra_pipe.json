@@ -1,0 +1,7 @@
+{
+	"name": "first_infra_pipe",
+	"properties": {
+		"description": "Bringing data from azure Cosmos db to MongoDB",
+		"annotations": []
+	}
+}
