@@ -4,7 +4,7 @@
 		"description": "Bringing data from azure Cosmos db to MongoDB",
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "move_data_to_mongo",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -16,8 +16,29 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "CosmosDbMongoDbApiSource",
+						"batchSize": 100
+					},
+					"sink": {
+						"type": "MongoDbV2Sink",
+						"writeBatchTimeout": "00:30:00",
+						"writeBehavior": "insert"
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "CosmosDbMongoDbCollection1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Mongoooo",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []

@@ -1,0 +1,12 @@
+{
+	"name": "Mongoooo",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MongoDb",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MongoDbV2Collection",
+		"schema": []
+	}
+}
