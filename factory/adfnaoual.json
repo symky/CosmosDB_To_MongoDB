@@ -1,0 +1,9 @@
+{
+	"name": "adfnaoual",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "374d0c5b-d413-4876-bdb0-93d0bf994911",
+		"tenantId": "d6c5bbe2-0dd0-4148-a86c-ffe8f3e95c29"
+	}
+}
