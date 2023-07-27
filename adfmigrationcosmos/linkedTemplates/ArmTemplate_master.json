@@ -11,9 +11,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'CosmosDbMongoDb1'"
 		},
+		"MongoDb1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'MongoDb1'"
+		},
 		"CosmosDbMongoDb1_properties_typeProperties_database": {
 			"type": "string",
 			"defaultValue": "databaseMigration"
+		},
+		"MongoDb1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "mydb"
 		},
 		"containerUri": {
 			"type": "string",
@@ -45,8 +53,14 @@
 					"CosmosDbMongoDb1_connectionString": {
 						"value": "[parameters('CosmosDbMongoDb1_connectionString')]"
 					},
+					"MongoDb1_connectionString": {
+						"value": "[parameters('MongoDb1_connectionString')]"
+					},
 					"CosmosDbMongoDb1_properties_typeProperties_database": {
 						"value": "[parameters('CosmosDbMongoDb1_properties_typeProperties_database')]"
+					},
+					"MongoDb1_properties_typeProperties_database": {
+						"value": "[parameters('MongoDb1_properties_typeProperties_database')]"
 					}
 				}
 			},

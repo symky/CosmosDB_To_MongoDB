@@ -8,8 +8,14 @@
 		"CosmosDbMongoDb1_connectionString": {
 			"value": ""
 		},
+		"MongoDb1_connectionString": {
+			"value": ""
+		},
 		"CosmosDbMongoDb1_properties_typeProperties_database": {
 			"value": "databaseMigration"
+		},
+		"MongoDb1_properties_typeProperties_database": {
+			"value": "mydb"
 		},
 		"containerUri": {
 			"value": ""
