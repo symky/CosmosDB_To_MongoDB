@@ -1,0 +1,9 @@
+{
+	"name": "adfmigrationcosmos",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5c9c6c05-0576-47bf-b799-4421a7596e5e",
+		"tenantId": "d6c5bbe2-0dd0-4148-a86c-ffe8f3e95c29"
+	}
+}
