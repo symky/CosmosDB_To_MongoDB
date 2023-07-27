@@ -137,7 +137,7 @@
 				"type": "MongoDbV2Collection",
 				"schema": [],
 				"typeProperties": {
-					"collection": "orders"
+					"collection": "myfirstTables"
 				}
 			},
 			"dependsOn": [
