@@ -1,5 +1,5 @@
 {
-	"name": "pipelineMigration",
+	"name": "migrationdelatableabcdeTESTDB",
 	"properties": {
 		"description": "to migrate data from cosmos to mongo db",
 		"activities": [
