@@ -1,9 +1,10 @@
 {
 	"name": "pipelineMigration",
 	"properties": {
+		"description": "to migrate data from cosmos to mongo db",
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "copydatac",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
