@@ -9,7 +9,7 @@
 		"type": "CosmosDbMongoDbApiCollection",
 		"schema": [],
 		"typeProperties": {
-			"collection": "TestData"
+			"collection": "Book Title"
 		}
 	}
 }
