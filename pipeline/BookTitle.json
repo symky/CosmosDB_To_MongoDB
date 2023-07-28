@@ -19,11 +19,22 @@
 						"type": "CosmosDbMongoDbApiSource",
 						"batchSize": 100
 					},
+					"sink": {
+						"type": "MongoDbV2Sink",
+						"writeBatchTimeout": "00:30:00",
+						"writeBehavior": "insert"
+					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "CosmosDbMongoDbCollection1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "MongoDbV2Collection1",
 						"type": "DatasetReference"
 					}
 				]
