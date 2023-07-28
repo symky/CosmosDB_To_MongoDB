@@ -1,6 +1,7 @@
 {
 	"name": "BookTitle",
 	"properties": {
+		"description": "move to mongo db book title",
 		"activities": [
 			{
 				"name": "Copy data1",
