@@ -1,0 +1,109 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name"
+		},
+		"CosmosDbMongoDb1": {
+			"type": "string"
+		},
+		"MongoDb1": {
+			"type": "string"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/BookTitle')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "move to mongo db book title",
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CosmosDbMongoDbApiSource",
+								"batchSize": 100
+							},
+							"sink": {
+								"type": "MongoDbV2Sink",
+								"writeBatchTimeout": "00:30:00",
+								"writeBehavior": "insert"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "CosmosDbMongoDbCollection1",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "MongoDbV2Collection1",
+								"type": "DatasetReference"
+							}
+						]
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/CosmosDbMongoDbCollection1')]",
+				"[concat(variables('factoryId'), '/datasets/MongoDbV2Collection1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CosmosDbMongoDbCollection1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('CosmosDbMongoDb1')]",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "CosmosDbMongoDbApiCollection",
+				"schema": [],
+				"typeProperties": {
+					"collection": "Book Title"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MongoDbV2Collection1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('MongoDb1')]",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "MongoDbV2Collection",
+				"schema": [],
+				"typeProperties": {
+					"collection": "BookTitle"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
