@@ -1,0 +1,17 @@
+{
+	"name": "autorepbooktitle",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 48,
+				"startTime": "2023-08-01T11:11:00",
+				"timeZone": "Morocco Standard Time"
+			}
+		}
+	}
+}
