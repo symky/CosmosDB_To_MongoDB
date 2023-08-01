@@ -15,7 +15,7 @@
 		"typeProperties": {
 			"recurrence": {
 				"frequency": "Minute",
-				"interval": 15,
+				"interval": 720,
 				"startTime": "2023-08-01T10:18:00",
 				"timeZone": "Morocco Standard Time"
 			}
